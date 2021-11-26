@@ -31,7 +31,7 @@ buildx-build:
 
 buildx-push:
 	docker buildx build \
-    	--build-arg BASE_IMAGE_TAG=$(BASE_IMAGE_TAG)
+    	--build-arg BASE_IMAGE_TAG=$(BASE_IMAGE_TAG) \
 	    --platform $(PLATFORM) \
 		-f Dockerfile.wodby \
 		--push -t $(REPO):$(TAG) ./
