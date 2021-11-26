@@ -3,6 +3,8 @@
 TAG ?= $(REDIS_VER)
 ALPINE_VER ?= 3.13
 
+PLATFORM ?= linux/amd64
+
 REPO = wodby/base-redis
 NAME = base-redis-$REDIS_VER()
 
@@ -28,11 +30,11 @@ buildx-build:
 		--build-arg BASE_IMAGE_TAG=$(BASE_IMAGE_TAG) ./
 
 buildx-push:
-    docker buildx build -t $(REPO):$(TAG) \
+	docker buildx build \
+    	--build-arg BASE_IMAGE_TAG=$(BASE_IMAGE_TAG)
 	    --platform $(PLATFORM) \
-	    --push \
 		-f Dockerfile.wodby \
-		--build-arg BASE_IMAGE_TAG=$(BASE_IMAGE_TAG) ./
+		--push -t $(REPO):$(TAG) ./
 
 test:
 	IMAGE=$(REPO):$(TAG) ./test.sh
