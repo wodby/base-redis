@@ -1,26 +1,25 @@
-# https://github.com/docker-library/redis
+# About this Repo
 
-## Maintained by: [the Docker Community](https://github.com/docker-library/redis)
+[![Build Status](https://github.com/wodby/base-redis/workflows/Build%20docker%20image/badge.svg)](https://github.com/wodby/base-redis/actions)
+[![Docker Pulls](https://img.shields.io/docker/pulls/wodby/base-redis.svg)](https://hub.docker.com/r/wodby/base-redis)
+[![Docker Stars](https://img.shields.io/docker/stars/wodby/base-redis.svg)](https://hub.docker.com/r/wodby/base-redis)
+[![Docker Layers](https://images.microbadger.com/badges/image/wodby/base-redis.svg)](https://microbadger.com/images/wodby/base-redis)
 
-This is the Git repo of the [Docker "Official Image"](https://github.com/docker-library/official-images#what-are-official-images) for [`redis`](https://hub.docker.com/_/redis/) (not to be confused with any official `redis` image provided by `redis` upstream). See [the Docker Hub page](https://hub.docker.com/_/redis/) for the full readme on how to use this Docker image and for information regarding contributing and issues.
+This repository is a fork of https://github.com/docker-library/redis with a few changes:
 
-The [full image description on Docker Hub](https://hub.docker.com/_/redis/) is generated/maintained over in [the docker-library/docs repository](https://github.com/docker-library/docs), specifically in [the `redis` directory](https://github.com/docker-library/docs/tree/master/redis).
+* Only alpine-based images
+* All images based on [alpine](https://github.com/wodby/alpine) 3.13 version due to [this](https://github.com/alpinelinux/docker-alpine/issues/182) change in 3.14 that prevents us from running it on older docker versions
 
-## See a change merged here that doesn't show up on Docker Hub yet?
+## Docker Images
 
-For more information about the full official images change lifecycle, see [the "An image's source changed in Git, now what?" FAQ entry](https://github.com/docker-library/faq#an-images-source-changed-in-git-now-what).
+* All images based on Alpine Linux
+* Base image: [wodby/alpine](https://github.com/wodby/alpine)
+* [Docker Hub](https://hub.docker.com/r/wodby/base-redis)
 
-For outstanding `redis` image PRs, check [PRs with the "library/redis" label on the official-images repository](https://github.com/docker-library/official-images/labels/library%2Fredis). For the current "source of truth" for [`redis`](https://hub.docker.com/_/redis/), see [the `library/redis` file in the official-images repository](https://github.com/docker-library/official-images/blob/master/library/redis).
+Supported tags and respective `Dockerfile` links:
 
----
+* `6.2.6`, `6.2`, `6`, `latest` [_(Dockerfile)_](https://github.com/wodby/base-redis/tree/master/6.2/alpine/Dockerfile.wodby)
+* `6.0.16`, `6.0` [_(Dockerfile)_](https://github.com/wodby/base-redis/tree/master/6.0/alpine/Dockerfile.wodby)
+* `5.0.14`, `5.0`, `5` [_(Dockerfile)_](https://github.com/wodby/base-redis/tree/master/5/alpine/Dockerfile.wodby)
 
--	[![build status badge](https://img.shields.io/github/workflow/status/docker-library/redis/GitHub%20CI/master?label=GitHub%20CI)](https://github.com/docker-library/redis/actions?query=workflow%3A%22GitHub+CI%22+branch%3Amaster)
--	[![build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/update.sh/job/redis.svg?label=Automated%20update.sh)](https://doi-janky.infosiftr.net/job/update.sh/job/redis/)
-
-| Build | Status | Badges | (per-arch) |
-|:-:|:-:|:-:|:-:|
-| [![amd64 build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/multiarch/job/amd64/job/redis.svg?label=amd64)](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/redis/) | [![arm32v5 build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/multiarch/job/arm32v5/job/redis.svg?label=arm32v5)](https://doi-janky.infosiftr.net/job/multiarch/job/arm32v5/job/redis/) | [![arm32v6 build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/multiarch/job/arm32v6/job/redis.svg?label=arm32v6)](https://doi-janky.infosiftr.net/job/multiarch/job/arm32v6/job/redis/) | [![arm32v7 build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/multiarch/job/arm32v7/job/redis.svg?label=arm32v7)](https://doi-janky.infosiftr.net/job/multiarch/job/arm32v7/job/redis/) |
-| [![arm64v8 build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/multiarch/job/arm64v8/job/redis.svg?label=arm64v8)](https://doi-janky.infosiftr.net/job/multiarch/job/arm64v8/job/redis/) | [![i386 build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/multiarch/job/i386/job/redis.svg?label=i386)](https://doi-janky.infosiftr.net/job/multiarch/job/i386/job/redis/) | [![mips64le build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/multiarch/job/mips64le/job/redis.svg?label=mips64le)](https://doi-janky.infosiftr.net/job/multiarch/job/mips64le/job/redis/) | [![ppc64le build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/multiarch/job/ppc64le/job/redis.svg?label=ppc64le)](https://doi-janky.infosiftr.net/job/multiarch/job/ppc64le/job/redis/) |
-| [![s390x build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/multiarch/job/s390x/job/redis.svg?label=s390x)](https://doi-janky.infosiftr.net/job/multiarch/job/s390x/job/redis/) | [![put-shared build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/put-shared/job/light/job/redis.svg?label=put-shared)](https://doi-janky.infosiftr.net/job/put-shared/job/light/job/redis/) |
-
-<!-- THIS FILE IS GENERATED BY https://github.com/docker-library/docs/blob/master/generate-repo-stub-readme.sh -->
+All images built for `linux/amd64` and `linux/arm64`
