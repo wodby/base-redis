@@ -30,11 +30,11 @@ jobs:
     - uses: ./.github/actions
       with:
         version: ${{ env.REDIS62 }}
-        tags: ${{ env.REDIS62 }},6.2,6,latest
+        tags: ${{ env.REDIS62 }}-alpine3.15,6.2-alpine3.15,6-alpine3.15,${{ env.REDIS62 }},6.2,6,alpine3.15,latest
         workdir: 6.2
         platform: linux/amd64,linux/arm64
         alpine_ver: 3.15
-  redis-6:
+  redis-60:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -45,11 +45,11 @@ jobs:
     - uses: ./.github/actions
       with:
         version: ${{ env.REDIS60 }}
-        tags: ${{ env.REDIS60 }},6.0
+        tags: ${{ env.REDIS60 }}-alpine3.15,6.0-alpine3.15,${{ env.REDIS60 }},6.0
         workdir: '6.0'
         platform: linux/amd64,linux/arm64
         alpine_ver: 3.15
-  redis-5:
+  redis-50:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -59,8 +59,8 @@ jobs:
     - uses: docker/setup-buildx-action@v1
     - uses: ./.github/actions
       with:
-        version: ${{ env.REDIS50 }}
-        tags: ${{ env.REDIS50 }},5.0,5
+        version: ${{ env.REDIS5 }}
+        tags: ${{ env.REDIS5 }}-alpine3.15,5.0-alpine3.15,5-alpine3.15,${{ env.REDIS5 }},5.0,5
         workdir: 5
         platform: linux/amd64,linux/arm64
         alpine_ver: 3.15
@@ -79,7 +79,7 @@ jobs:
         workdir: 6.2
         platform: linux/amd64,linux/arm64
         alpine_ver: 3.13
-  redis-6-alpine313:
+  redis-60-alpine313:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -94,7 +94,7 @@ jobs:
         workdir: '6.0'
         platform: linux/amd64,linux/arm64
         alpine_ver: 3.13
-  redis-5-alpine313:
+  redis-50-alpine313:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -104,8 +104,8 @@ jobs:
     - uses: docker/setup-buildx-action@v1
     - uses: ./.github/actions
       with:
-        version: ${{ env.REDIS50 }}
-        tags: ${{ env.REDIS50 }}-alpine3.13,5.0-alpine3.13,5-alpine3.13
+        version: ${{ env.REDIS5 }}
+        tags: ${{ env.REDIS5 }}-alpine3.13,5.0-alpine3.13,5-alpine3.13
         workdir: 5
         platform: linux/amd64,linux/arm64
         alpine_ver: 3.13
