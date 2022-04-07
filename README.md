@@ -3,7 +3,6 @@
 [![Build Status](https://github.com/wodby/base-redis/workflows/Build%20docker%20image/badge.svg)](https://github.com/wodby/base-redis/actions)
 [![Docker Pulls](https://img.shields.io/docker/pulls/wodby/base-redis.svg)](https://hub.docker.com/r/wodby/base-redis)
 [![Docker Stars](https://img.shields.io/docker/stars/wodby/base-redis.svg)](https://hub.docker.com/r/wodby/base-redis)
-[![Docker Layers](https://images.microbadger.com/badges/image/wodby/base-redis.svg)](https://microbadger.com/images/wodby/base-redis)
 
 This repository is a fork of https://github.com/docker-library/redis with a few changes:
 
